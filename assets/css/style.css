@@ -99,7 +99,7 @@ a:hover, a:active {
   border-bottom: thin solid #ddd;
 }
 
-.navbar {
+.navbar-container .navbar {
   padding: 0;
   width: 90%;
   max-width: 960px;
@@ -107,56 +107,63 @@ a:hover, a:active {
   background-color: #fff;
 }
 
-.navbar-brand {
+.navbar-container .navbar .navbar-brand {
   padding: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-.navbar-brand .logo {
+.navbar-container .navbar .navbar-brand .logo {
   height: 2em;
   margin-right: 20px;
 }
 
-.navbar-brand .logo-name {
+.navbar-container .navbar .navbar-brand .logo-name {
   display: none;
   color: #949494;
   font-size: 1.2em;
 }
 
 @media screen and (min-width: 767px) {
-  .navbar-brand .logo-name {
+  .navbar-container .navbar .navbar-brand .logo-name {
     display: inline-block;
   }
 }
 
-.navbar-brand:hover,
-.navbar-brand:focus {
+.navbar-container .navbar .navbar-brand:hover, .navbar-container .navbar .navbar-brand:focus {
   opacity: .6;
 }
 
-.navbar-toggler:focus {
+.navbar-container .navbar .navbar-toggler {
+  border: none;
+}
+
+.navbar-container .navbar .navbar-toggler:focus {
   outline: none;
   opacity: .5;
 }
 
-.navbar-toggler-icon:hover,
-.navbar-toggler-icon:focus {
+.navbar-container .navbar .navbar-toggler-icon:hover, .navbar-container .navbar .navbar-toggler-icon:focus {
   opacity: .5;
   -webkit-transition: .4s all;
   transition: .4s all;
 }
 
-.nav-item {
+.navbar-container .navbar #navbarNav .nav-item {
   color: #777;
 }
 
-.navbar-nav li:not(:last-of-type) {
+.navbar-container .navbar #navbarNav .nav-item:not(:last-of-type) {
   padding-right: 10px;
   margin-right: 10px;
-  border-right: thin solid #ddd;
 }
 
 @media screen and (max-width: 767px) {
-  .navbar-nav li:not(:last-of-type) {
+  .navbar-container .navbar #navbarNav .nav-item:not(:last-of-type) {
     padding-right: 0;
     margin-right: 0;
     border: none;
@@ -164,13 +171,13 @@ a:hover, a:active {
 }
 
 @media screen and (max-width: 767px) {
-  #navbarNav {
+  .navbar-container .navbar #navbarNav {
     text-align: right;
     margin-bottom: .5em;
   }
 }
 
-.navbar-light .navbar-nav .active > .nav-link {
+.navbar-container .navbar-light .navbar-nav .active > .nav-link {
   color: #ed1c24;
 }
 
@@ -189,8 +196,9 @@ a:hover, a:active {
   }
 }
 
-.main-title {
+.main .row .col-sm-12 .main-title {
   border-bottom: thin solid #ddd;
+  text-align: center;
 }
 
 .footer {
@@ -214,7 +222,7 @@ body {
   height: 100vh;
 }
 
-.main {
+body .main {
   -webkit-box-flex: 1;
       -ms-flex: 1 0 auto;
           flex: 1 0 auto;
@@ -222,6 +230,14 @@ body {
 }
 
 /* ----- About Page */
+@media screen and (min-width: 576px) {
+  #about .card-img {
+    max-width: 200px;
+    float: left;
+    margin-right: 20px;
+  }
+}
+
 #about .card-p {
   margin-top: 20px;
   line-height: 2em;
@@ -233,27 +249,18 @@ body {
   }
 }
 
-@media screen and (min-width: 576px) {
-  #about .card-img {
-    max-width: 200px;
-    float: left;
-    margin-right: 20px;
-  }
-}
-
 /* ----- Portfolio Page */
-#portfolio .portfolio-label {
-  bottom: 12px;
-  left: 0;
-  background-color: #ed1c24;
-}
-
-#portfolio .portfolio-piece:hover,
-#portfolio .portfolio-piece:focus {
+#portfolio .portfolio-piece:hover, #portfolio .portfolio-piece:focus {
   -webkit-box-shadow: 0px 3px 5px -2px rgba(0, 0, 0, 0.75);
   box-shadow: 0px 3px 5px -2px rgba(0, 0, 0, 0.75);
   -webkit-transition: .4s all;
   transition: .4s all;
+}
+
+#portfolio .portfolio-piece .portfolio-label {
+  bottom: 12px;
+  left: 0;
+  background-color: #ed1c24;
 }
 
 /* ----- Contact Page */
@@ -275,8 +282,7 @@ button[type="submit"] {
   transition: .4s background-color;
 }
 
-button[type="submit"]:hover,
-button[type="submit"]:focus {
+button[type="submit"]:hover, button[type="submit"]:focus {
   background-color: #af0e14;
   color: #fff;
   cursor: pointer;
