@@ -3,10 +3,27 @@ $c-theme: #ed1c24;
 $c-theme-accent: #949494;
 $c-theme-accent-darken: darken($c-theme-accent, 20%);
 $c-white: #fff;
-$c-bg: #f9f9f9;
+$c-black: #000;
+$c-bg: #fbf6f1;
+
+@import url(https://fonts.googleapis.com/css?family=Roboto&display=swap);
 
 $f-headings: 'Roboto', sans-serif;
 $f-body: 'Roboto', sans-serif;
+
+
+/* ---------  Mixins */
+@mixin box-shadow {
+  -webkit-box-shadow: 0px 3px 5px -2px rgba(0,0,0,0.3);
+  -moz-box-shadow: 0px 3px 5px -2px rgba(0,0,0,0.3);
+  box-shadow: 0px 3px 5px -2px rgba(0,0,0,0.3);
+}
+
+@mixin center($max-width) {
+  width: 90%;
+  max-width: $max-width;
+  margin: auto;
+}
 
 
 /* ---------  Setup */
@@ -16,17 +33,22 @@ $f-body: 'Roboto', sans-serif;
   
   body {
       margin: 0;
-      background: $c-bg url("../images/email-pattern.png") repeat fixed center; 
+      background: $c-bg; 
   }
 
 
   /* ---------  Fonts */
- 
+  h1, h2, h3, h4, h5 {
+    font-family: $f-headings;
+    margin: 0;
+    text-transform: uppercase;
+  }
+
   h1 {
     color: $c-white;
-    font-size: 1.2rem;
+    font-size: 2rem;
     @media screen and (min-width: 576px) {
-        font-size: 2rem;
+        font-size: 2.5rem;
     }
   }
 
@@ -46,10 +68,15 @@ $f-body: 'Roboto', sans-serif;
       }
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h6 {
+    color: $c-theme;
+    font-weight: bold;
     font-family: $f-headings;
     margin: 0;
-    text-transform: uppercase;
+  }
+
+  strong {
+    color: $c-black;
   }
 
   p, ul, li, a, label, input[type="text"],
@@ -69,14 +96,16 @@ $f-body: 'Roboto', sans-serif;
       transition: .4s all;
       &:hover, &:active {
         color: $c-theme;
+        text-decoration: none;
     }
   }
 
 
   /* ---- layout */
-  .navbar-container {
+ .navbar-container {
     background-color: $c-white;
     border-bottom: thin solid #ddd;
+    @include box-shadow;
     .navbar {
       padding: 0;
       width: 90%;
@@ -140,18 +169,9 @@ $f-body: 'Roboto', sans-serif;
     }
   }
 
-  .main {
-    max-width: 960px;
-    width: 90%;
-    .row .col-sm-12 {
-      margin-top: 90px;
-      @media screen and (min-width: 576px) {
-        margin-top: 110px;
-      }
-      .main-title {
-        border-bottom: thin solid #ddd;
-        text-align: center;
-      }
+  main {
+    .card-title {
+      text-align: center;
     }
   }
 
@@ -178,19 +198,90 @@ $f-body: 'Roboto', sans-serif;
 
   /* ----- About Page */
   #about {
-    .card-img  {
-      @media screen and (min-width: 576px) {
-        max-width: 200px;
-        float: left;
-        margin-right: 20px;
+    .hero {
+      padding: 10em 0 5em;
+      background-color: $c-theme;  
+      color: $c-white;
+      text-align: center;
+      p {
+        color: $c-white;
+        margin-top: 1em;
       }
     }
-    .card-p {
-      margin-top: 20px;
-      line-height: 2em;
-      &:first-of-type {
+    .skills {
+      background-color: $c-white;
+      .wrapper {
+        @include center(767px);
+        text-align: center;
+        padding: 10% 0;
+        .skill {
+          i {
+            background-color: $c-theme;
+            border-radius: 50%;
+            padding: 1em;
+            color: $c-white;
+            margin-bottom: .5em;
+            font-size: 1.3em;
+          }
+          .fa-laptop-code, .fa-network-wired {
+            padding: 1em .9em;
+          }
+          &:not(:last-of-type) {
+            margin-bottom: 3em;
+            @media screen and (min-width: 576px) {
+              margin-bottom: 0;
+            }
+          }
+          flex: 1;
+        }
         @media screen and (min-width: 576px) {
-          margin-top: 0;
+          display: flex;
+          justify-content: space-around;
+        }
+      }
+    }
+    main {
+      @include center(960px);
+      .about-me {
+        padding: 10% 0;
+        .bio-content {
+          .img-links {
+            img {
+              margin: 0 0 2em 0;
+            }
+            @media screen and (min-width: 576px) {
+              width: 40%;
+              margin: 0 2em 0 0;
+            }
+            .about-links {
+              margin-bottom: 1em;
+              a {
+                color: $c-theme;
+                i {
+                  margin-left: .5em;
+                }
+                &:hover, &:focus {
+                  color: $c-theme-accent-darken;
+                }
+                &:not(:last-of-type) {
+                  margin-right: .5em;
+                  padding-right: .5em;
+                  border-right: thin solid $c-theme-accent-darken;
+                }
+              }
+            }
+          }
+          .bio {
+            p:first-of-type {
+              margin-bottom: 1em;
+            }
+            @media screen and (min-width: 576px) {
+              width: 60%;
+            }
+          }
+          @media screen and (min-width: 576px) {
+            display: flex;
+          }
         }
       }
     }
@@ -199,42 +290,158 @@ $f-body: 'Roboto', sans-serif;
 
   /* ----- Portfolio Page */
   #portfolio {
-    .portfolio-piece {
-      &:hover, &:focus {
-        -webkit-box-shadow: 0px 3px 5px -2px rgba(0,0,0,0.75);
-        -moz-box-shadow: 0px 3px 5px -2px rgba(0,0,0,0.75);
-        box-shadow: 0px 3px 5px -2px rgba(0,0,0,0.75);
-        transition: .4s all;
-      }
-      .portfolio-label {
-        bottom: 12px;
-        left: 0;
-        background-color: $c-theme; 
+    main {
+      margin-top: 8em;
+      .boxes {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        .box-container {
+          width: 100%;
+          position: relative;
+          &-icons {
+            position: absolute;
+            width: 100%;
+            top: 5%;
+            left: 5%;
+            z-index: 1;
+            a {
+              i {
+                background-color: $c-theme;
+                border-radius: 50%;
+                padding: 1em;
+                color: $c-white;
+                margin-bottom: .5em;
+                font-size: 1em;
+                @include box-shadow;
+                transition: all .5s;
+              }
+              &:hover, &:focus {
+                i {
+                  background-color: $c-theme-accent-darken;
+                }
+              }
+            }
+          }
+          @media (min-width: 500px) {
+            width: 50%;
+          }
+          @media (min-width: 800px) {
+            width: 33.333%;
+          }
+          @media (min-width: 1200px) {
+            width: 25%;
+          }
+        .box {
+          background: lightgrey;
+          height: 100vw;
+          border-bottom: thin $c-white solid;
+          @media (min-width: 500px) {
+            height: 50vw;
+            border: thin $c-white solid;
+          }
+          @media (min-width: 800px) {
+            height: 33.333vw;
+          }
+          @media (min-width: 1200px) {
+            height: 25vw;
+          }
+          position: relative;
+          .work-thumbnail {
+            width: 100%;
+            height: 100%;
+            padding: 5em;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+            .thumbnail1 {
+              background: $c-black url("../images/work1.png") no-repeat top center / cover;
+            }
+            .thumbnail2 {
+              background: $c-black url("../images/work2.png") no-repeat top center / cover;
+            }
+            .thumbnail3 {
+              background: $c-black url("../images/work3.png") no-repeat top center / cover;
+            }
+            &-overlay {
+              position: absolute;
+              width: 100%;
+              height:100%;
+              top:0;
+              left:0;
+              background:rgba(darken($c-theme, 20%), 0.9);;
+              opacity: 0;
+              transition: all .5s;
+              &::before {
+                content: 'Work Title';
+                color: $c-white;
+                font-family: $f-headings;
+                text-transform: uppercase;
+                position: absolute;
+                font-size: 1.8em;
+                width: 100%;
+                bottom: 12%;
+                left: 5%;
+                opacity: 0;
+                transition: all .5s;
+              }
+              &::after {
+                content: 'Work Description';
+                color: $c-white;
+                font-family: $f-headings;
+                position: absolute;
+                font-size: 1.3em;
+                width: 100%;
+                bottom: 5%;
+                left: 5%;
+                opacity: 0;
+                transition: all .5s;
+              }
+              &:hover {
+              opacity: 1;
+                &::before {
+                  opacity: 1;
+                  font-size: 1.5em;
+                }
+                &::after {
+                  opacity: 1;
+                  font-size: 1em;
+                }
+              }
+            }
+            &-overlay1 {
+              &::before {
+                content: 'Pack-It';
+              }
+              &::after {
+                content: 'Collaboration';
+              }
+            }
+            &-overlay2 {
+              &::before {
+                content: 'Weather Dashboard';
+              }
+              &::after {
+                content: 'Individual';
+              }
+            }
+            &-overlay3 {
+              &::before {
+                content: 'Code Quiz';
+              }
+              &::after {
+                content: 'Individual';
+              }
+            }
+          }
+        }
       }
     }
   }
 
 
   /* ----- Contact Page */
-input[type="text"]:hover,
-textarea[type="text"]:hover,
-input[type="text"]:focus,
-textarea[type="text"]:focus {
-  border: thin solid #ddd;
-  border-left: 8px solid $c-theme;
-}
+  // #contact {
 
-button[type="submit"] {
-  background-color: $c-theme;
-  border-style: none;
-  color: $c-white;
-  font-size: 16px;
-  padding: 10px 30px;
-  transition: .4s background-color;
-  &:hover,
-  &:focus {
-    background-color: darken($c-theme, 15%);
-    color: $c-white;
-    cursor: pointer;
-  }
-}
+  // }
