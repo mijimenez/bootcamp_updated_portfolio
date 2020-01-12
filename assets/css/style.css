@@ -237,12 +237,19 @@ body .main {
   text-align: center;
 }
 
+#about .hero .wrapper {
+  width: 90%;
+  max-width: 470px;
+  margin: auto;
+}
+
 #about .hero p {
   color: #fff;
   margin-top: 1em;
 }
 
 #about .skills {
+  padding: 10% 0;
   background-color: #fff;
 }
 
@@ -250,46 +257,49 @@ body .main {
   width: 90%;
   max-width: 767px;
   margin: auto;
-  text-align: center;
-  padding: 10% 0;
 }
 
-#about .skills .wrapper .skill {
+#about .skills .wrapper h2 {
+  text-align: center;
+}
+
+#about .skills .wrapper .skills-wrapper {
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+#about .skills .wrapper .skills-wrapper .skill {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
+  -ms-flex-preferred-size: 50%;
+      flex-basis: 50%;
 }
 
-#about .skills .wrapper .skill i {
-  background-color: #ed1c24;
-  border-radius: 50%;
-  padding: 1em;
-  color: #fff;
+#about .skills .wrapper .skills-wrapper .skill i {
+  color: #ed1c24;
   margin-bottom: .5em;
-  font-size: 1.3em;
+  font-size: 3em;
 }
 
-#about .skills .wrapper .skill .fa-laptop-code, #about .skills .wrapper .skill .fa-network-wired {
-  padding: 1em .9em;
-}
-
-#about .skills .wrapper .skill:not(:last-of-type) {
+#about .skills .wrapper .skills-wrapper .skill:not(:last-of-type) {
   margin-bottom: 3em;
 }
 
 @media screen and (min-width: 576px) {
-  #about .skills .wrapper .skill:not(:last-of-type) {
+  #about .skills .wrapper .skills-wrapper .skill:not(:last-of-type) {
     margin-bottom: 0;
   }
 }
 
 @media screen and (min-width: 576px) {
-  #about .skills .wrapper {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-pack: distribute;
-        justify-content: space-around;
+  #about .skills .wrapper .skills-wrapper .skill {
+    -ms-flex-preferred-size: 0;
+        flex-basis: 0;
   }
 }
 
@@ -299,55 +309,55 @@ body .main {
   margin: auto;
 }
 
-#about main .about-me {
+#about main .contact-me {
   padding: 10% 0;
 }
 
-#about main .about-me .bio-content .img-links img {
+#about main .contact-me .bio-content .img-links img {
   margin: 0 0 2em 0;
 }
 
 @media screen and (min-width: 576px) {
-  #about main .about-me .bio-content .img-links {
+  #about main .contact-me .bio-content .img-links {
     width: 40%;
     margin: 0 2em 0 0;
   }
 }
 
-#about main .about-me .bio-content .img-links .about-links {
+#about main .contact-me .bio-content .img-links .about-links {
   margin-bottom: 1em;
 }
 
-#about main .about-me .bio-content .img-links .about-links a {
+#about main .contact-me .bio-content .img-links .about-links a {
   color: #ed1c24;
 }
 
-#about main .about-me .bio-content .img-links .about-links a i {
+#about main .contact-me .bio-content .img-links .about-links a i {
   margin-left: .5em;
 }
 
-#about main .about-me .bio-content .img-links .about-links a:hover, #about main .about-me .bio-content .img-links .about-links a:focus {
+#about main .contact-me .bio-content .img-links .about-links a:hover, #about main .contact-me .bio-content .img-links .about-links a:focus {
   color: #616161;
 }
 
-#about main .about-me .bio-content .img-links .about-links a:not(:last-of-type) {
+#about main .contact-me .bio-content .img-links .about-links a:not(:last-of-type) {
   margin-right: .5em;
   padding-right: .5em;
   border-right: thin solid #616161;
 }
 
-#about main .about-me .bio-content .bio p:first-of-type {
+#about main .contact-me .bio-content .bio p:first-of-type {
   margin-bottom: 1em;
 }
 
 @media screen and (min-width: 576px) {
-  #about main .about-me .bio-content .bio {
+  #about main .contact-me .bio-content .bio {
     width: 60%;
   }
 }
 
 @media screen and (min-width: 576px) {
-  #about main .about-me .bio-content {
+  #about main .contact-me .bio-content {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -365,9 +375,6 @@ body .main {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
 }
 
 #portfolio main .boxes .box-container {
@@ -412,12 +419,6 @@ body .main {
   }
 }
 
-@media (min-width: 1200px) {
-  #portfolio main .boxes .box-container {
-    width: 25%;
-  }
-}
-
 #portfolio main .boxes .box-container .box {
   background: lightgrey;
   height: 100vw;
@@ -435,12 +436,6 @@ body .main {
 @media (min-width: 800px) {
   #portfolio main .boxes .box-container .box {
     height: 33.333vw;
-  }
-}
-
-@media (min-width: 1200px) {
-  #portfolio main .boxes .box-container .box {
-    height: 25vw;
   }
 }
 
@@ -549,6 +544,4 @@ body .main {
 #portfolio main .boxes .box-container .box-overlay3::after {
   content: 'Individual';
 }
-
-/* ----- Contact Page */
 /*# sourceMappingURL=style.css.map */

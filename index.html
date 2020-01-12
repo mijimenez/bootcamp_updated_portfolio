@@ -23,10 +23,10 @@
                     <a class="nav-link" href="index.html">About<span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="portfolio.html">Portfolio</a>
+                    <a class="nav-link" href="#contactMe">Contact</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="contact.html">Contact</a>
+                    <a class="nav-link" href="portfolio.html">Portfolio</a>
                 </li>
                 </ul>
             </div>
@@ -35,31 +35,45 @@
 
     <div class="hero">
         <div class="wrapper">
-            </div>
             <h1>Hello.</h1>
-            <p>I am a web designer</p>
+            <p>"I believe that design decisions should be well-informed by a knowledge of code; working in conjunction to provide the best user experience."</p>
         </div>
     </div>
     <div class="skills">
         <div class="wrapper">
-            <div class="skill">
-                <i class="fas fa-paint-brush"></i>
-                <p>UX/UI Design</p>
-            </div>
-            <div class="skill">
-                <i class="fas fa-laptop-code"></i>
-                <p>HTML, CSS, JavaScript</p>
-            </div>
-            <div class="skill">
-                <i class="fas fa-network-wired"></i>
-                <p>Web Server Management</p>
+            <h2 class="mb-4 pb-4">Programming Languages and Tools</h2>
+            <div class="skills-wrapper">
+                <div class="skill">
+                    <i class="fab fa-html5"></i>
+                </div>
+                <div class="skill">
+                    <i class="fab fa-css3-alt"></i>
+                </div>
+                <div class="skill">
+                    <i class="fab fa-js-square"></i>
+                </div>
+                <div class="skill">
+                    <i class="fab fa-node"></i>
+                </div>
+                <div class="skill">
+                    <i class="fab fa-sass"></i>
+                </div>
+                <div class="skill">
+                    <i class="fab fa-wordpress"></i>
+                </div>
+                <div class="skill">
+                    <i class="fab fa-npm"></i>
+                </div>
+                <div class="skill">
+                    <i class="fab fa-git"></i>
+                </div>
             </div>
         </div>
     </div>
 
     <main class="main">
-        <div class="about-me">
-            <h2 class="card-title main-title mb-4 pb-4 w-100">About Me</h2>
+        <div class="contact-me" id="contactMe">
+            <h2 class="card-title main-title mb-4 pb-4 w-100">Contact Me</h2>
             <div class="bio-content">
                 <div class="img-links">
                     <img src="assets/images/bio-pic.jpg" alt="bio-pic" class="card-img">
@@ -69,8 +83,12 @@
                         <a href="https://www.madelinejimenez.com/" target="_blank" class="design-portfolio">Design Portfolio</a>
                         <a href="assets/images/Madeline_Jimenez_Resume_2020.pdf" download target="_blank"  class="resume">Resume<i class="fas fa-file-download"></i></a>
                     </div>
+                    <div class="contact-links">
+                        <a href="mailto:madelineijimenez@gmail.com"><i class="fas fa-envelope mr-2"></i>madelineijimenez@gmail.com</a>
+                        <p><i class="fas fa-phone mr-2"></i>301.741.0172</p>
+                    </div>
                 </div>
-                <div class="bio" id="aboutMe">
+                <div class="bio">
                     <p class="card-p">I am a <strong>graphic and web designer</strong>. My programming languages of choice are HTML5, CSS3 and vanilla JavaScript. Having worked in fields, ranging from men’s luxury clothing to higher education, I’ve had the privilege of working within talented creative teams to design and develop digital marketing assets including responsive websites, graphic emails and digital ads. <strong>I believe that design decisions should be well-informed by a knowledge of code; working in conjunction to provide the best user experience.</strong></p>
                     <p class="card-p">In my free-time I enjoy building static websites from scratch and going to the movies with my husband.</p>
                 </div>
@@ -85,6 +103,34 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script>
+	$(document).ready(function(){
+	  // Add smooth scrolling to all links
+	  $("a").on('click', function(event) {
+
+	    // Make sure this.hash has a value before overriding default behavior
+	    if (this.hash !== "") {
+	      // Prevent default anchor click behavior
+	      event.preventDefault();
+
+	      // Store hash
+	      var hash = this.hash;
+
+	      // Using jQuery's animate() method to add smooth page scroll
+	      // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+	      $('html, body').animate({
+	        scrollTop: $(hash).offset().top
+	      }, 800, function(){
+	   
+	        // Add hash (#) to URL when done scrolling (default click behavior)
+	        window.location.hash = hash;
+	      });
+	    } // End if
+	  });
+	});
+
+	</script>
 </body>
 
 
