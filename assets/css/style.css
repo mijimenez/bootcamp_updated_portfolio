@@ -346,6 +346,10 @@ body .main {
   border-right: thin solid #616161;
 }
 
+#about main .contact-me .bio-content .contact-links {
+  margin-bottom: 2em;
+}
+
 #about main .contact-me .bio-content .bio p:first-of-type {
   margin-bottom: 1em;
 }
