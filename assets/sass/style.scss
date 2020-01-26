@@ -373,6 +373,9 @@ $f-body: 'Roboto', sans-serif;
             .thumbnail3 {
               background: $c-black url("../images/work3.png") no-repeat top center / cover;
             }
+            .thumbnail4 {
+              background: $c-black url("../images/work4.png") no-repeat top center / cover;
+            }
             &-overlay {
               position: absolute;
               width: 100%;
@@ -438,6 +441,14 @@ $f-body: 'Roboto', sans-serif;
             &-overlay3 {
               &::before {
                 content: 'Code Quiz';
+              }
+              &::after {
+                content: 'Individual';
+              }
+            }
+            &-overlay4 {
+              &::before {
+                content: 'Team Profile Generator';
               }
               &::after {
                 content: 'Individual';

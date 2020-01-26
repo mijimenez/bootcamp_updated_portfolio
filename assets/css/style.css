@@ -470,6 +470,10 @@ body .main {
   background: #000 url("../images/work3.png") no-repeat top center/cover;
 }
 
+#portfolio main .boxes .box-container .box .thumbnail4 {
+  background: #000 url("../images/work4.png") no-repeat top center/cover;
+}
+
 #portfolio main .boxes .box-container .box-overlay {
   position: absolute;
   width: 100%;
@@ -546,6 +550,14 @@ body .main {
 }
 
 #portfolio main .boxes .box-container .box-overlay3::after {
+  content: 'Individual';
+}
+
+#portfolio main .boxes .box-container .box-overlay4::before {
+  content: 'Team Profile Generator';
+}
+
+#portfolio main .boxes .box-container .box-overlay4::after {
   content: 'Individual';
 }
 /*# sourceMappingURL=style.css.map */
