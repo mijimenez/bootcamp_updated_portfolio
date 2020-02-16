@@ -474,6 +474,10 @@ body .main {
   background: #000 url("../images/work4.png") no-repeat top center/cover;
 }
 
+#portfolio main .boxes .box-container .box .thumbnail5 {
+  background: #000 url("../images/work5.png") no-repeat top center/cover;
+}
+
 #portfolio main .boxes .box-container .box-overlay {
   position: absolute;
   width: 100%;
@@ -558,6 +562,14 @@ body .main {
 }
 
 #portfolio main .boxes .box-container .box-overlay4::after {
+  content: 'Individual';
+}
+
+#portfolio main .boxes .box-container .box-overlay5::before {
+  content: 'Burgers';
+}
+
+#portfolio main .boxes .box-container .box-overlay5::after {
   content: 'Individual';
 }
 /*# sourceMappingURL=style.css.map */
