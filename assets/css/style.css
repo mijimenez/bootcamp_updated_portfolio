@@ -478,6 +478,10 @@ body .main {
   background: #000 url("../images/work5.png") no-repeat top center/cover;
 }
 
+#portfolio main .boxes .box-container .box .thumbnail6 {
+  background: #000 url("../images/work6.png") no-repeat top center/cover;
+}
+
 #portfolio main .boxes .box-container .box-overlay {
   position: absolute;
   width: 100%;
@@ -571,5 +575,13 @@ body .main {
 
 #portfolio main .boxes .box-container .box-overlay5::after {
   content: 'Individual';
+}
+
+#portfolio main .boxes .box-container .box-overlay6::before {
+  content: 'Good Cuisine';
+}
+
+#portfolio main .boxes .box-container .box-overlay6::after {
+  content: 'Collaboration';
 }
 /*# sourceMappingURL=style.css.map */

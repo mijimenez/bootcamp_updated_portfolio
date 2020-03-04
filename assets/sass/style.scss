@@ -379,6 +379,9 @@ $f-body: 'Roboto', sans-serif;
             .thumbnail5 {
               background: $c-black url("../images/work5.png") no-repeat top center / cover;
             }
+            .thumbnail6 {
+              background: $c-black url("../images/work6.png") no-repeat top center / cover;
+            }
             &-overlay {
               position: absolute;
               width: 100%;
@@ -463,6 +466,14 @@ $f-body: 'Roboto', sans-serif;
               }
               &::after {
                 content: 'Individual';
+              }
+            }
+            &-overlay6 {
+              &::before {
+                content: 'Good Cuisine';
+              }
+              &::after {
+                content: 'Collaboration';
               }
             }
           }
